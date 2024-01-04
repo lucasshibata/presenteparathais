@@ -1,0 +1,329 @@
+*{
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(173, 228, 228);
+    height: 100vh;
+    background-image: url("tokai_teio_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+h1{
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+}
+.interface{
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    padding-left: 3.7vw;
+}
+section{
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+}
+p{
+    font-size: large;
+    color: #000;
+	font: 12px Verdana, sans-serif;
+}
+nav.menu{
+    width: 70px;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.926);
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 #ffadd3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .3s;
+}
+nav.menu:hover{
+    width: 250px;
+}
+.botao-menu{
+    width: 100%;
+    padding-left: 10px;
+}
+.botao-menu > i{
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+ul{
+    height: 100%;
+    list-style: none;
+}
+ul li.itens-menu{
+    transition: .3s;
+}
+ul li.itens-menu:hover{
+    background-color: #ffadd3;
+}
+ul li.itens-menu a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    line-height: 40px;
+}
+ul li.itens-menu a .txt-link{
+    margin-left: 40px;
+}
+ul li.itens-menu a .icon > i{
+    font-size: 30px;
+    margin-left: 10px;
+}
+.container{
+    height: 100%;
+}
+
+
+/* primeira sessão */
+.page1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* gap: 40vh; */
+}
+.txt_pg1 {
+    background-color: rgba(250, 122, 233, 0.884);
+    height: 13vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.txt_pg2{
+    background-color: rgba(250, 122, 233, 0.884);
+    color: white;
+    height: 16vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.space{
+    height: 20vh;
+}
+.div_setas{
+    display: flex;
+    align-items: center;
+    gap: 20vw;
+    background-color: rgba(255, 0, 157, 0.849);
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.img_seta {
+    width: 10vw;
+    height: 15vh;
+}
+
+/* segunda sessão */
+.area-texto{
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+}
+.area-texto > p {
+    font-size: 1.5rem;
+    font-family: cursive;
+}
+.area-texto > h1 {
+    color: #000;
+}
+.bloco-texto{
+    width: 85vw;
+    height: 70vh;
+    background-color: rgb(250, 215, 250);
+    border-style: outset;
+    border-width: 10px;
+    border-color: #ffadd3;
+}
+.temporizador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+}
+.temporizador > p {
+    font-size: 3rem;
+    font-family: cursive;
+    color: goldenrod;
+}
+
+
+/* terceira sessão */
+.background-imgs{
+    width: 70vw;
+    height: 90vh;
+    background-color: rgb(250, 215, 250);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border: 10px solid #ffadd3;
+    border-style: outset;   
+}
+.background-imgs > h1{
+    color: #000;
+}
+.slider{
+    width: 30vw;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.slides{
+    display: flex;
+    height: 100%;
+    width: 1000%;
+}
+
+.navigation{
+    position: sticky;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+input{
+    display: none;
+}
+.manual-btn{
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 50px;
+    height: 20px;
+}
+.manual-btn:hover{
+    background-color: white;
+    transition: 0.4s;
+}
+
+
+.slide{
+    width: 10%;
+    transition: 0.5s;
+}
+
+.slide > img{
+    width: 100%;
+    height: 100%;
+}
+
+/* configuração de mudança de slides */
+
+#slide1:checked ~ .s1{
+    margin-left: 0;
+}
+
+#slide2:checked ~ .s1{
+    margin-left: -10%;
+}
+
+#slide3:checked ~ .s1{
+    margin-left: -20%;
+}
+
+#slide4:checked ~ .s1{
+    margin-left: -30%;
+}
+#slide5:checked ~ .s1{
+    margin-left: -40%;
+}
+#slide6:checked ~ .s1{
+    margin-left: -50%;
+}
+#slide7:checked ~ .s1{
+    margin-left: -60%;
+}
+#slide8:checked ~ .s1{
+    margin-left: -70%;
+}
+#slide9:checked ~ .s1{
+    margin-left: -80%;
+}
+#slide10:checked ~ .s1{
+    margin-left: -90%;
+}
+.page4{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.page4 > h1{
+    background-color: #c834db;
+    border: 4px solid #f8107c;
+    border-style: outset;
+    padding: 10px;
+    
+}
+
+/* quinta sessão */
+.page5{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.page5 > h1{
+    background-color: #c834db;
+    border: 4px solid#f8107c;
+    border-style: outset;
+    padding: 10px;
+}
+.texto-carta{
+    border: 10px solid #ffadd3;
+    border-style: outset;
+    background-color: rgb(250, 215, 250);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    height: 85vh;
+    width: 80%;
+    padding: 15px;
+    gap: 20px;
+}
+
+.texto-carta > p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.4rem;
+    
+}
