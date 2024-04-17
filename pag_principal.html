@@ -60,7 +60,7 @@
             </section>
             <section class="page3">
                 <div class="background-imgs">
-                    <h1>Alguas fotos nossas juntos:</h1>
+                    <h1>Algumas fotos nossas juntos:</h1>
                     <div class="slider">
                         <div class="slides">
                             <input type="radio" name="slide" id="slide1" checked>
@@ -75,34 +75,34 @@
                             <input type="radio" name="slide" id="slide10">
         
                             <div class="slide s1">
-                                <img src="https://drive.google.com/uc?id=1s4A01suebxGfffMdBP7r8eV0Hf_S7btS" alt="">
+                                <img src="imgs/download.jpg" alt="">
                             </div>
                             <div class="slide">
-                                <img src="https://drive.google.com/uc?id=15yxOCsjbmu1gxx1WBGieQ6Rs1kYYt2eK" alt="">
+                                <img src="imgs/download (1).jpg" alt="">
                             </div>
                             <div class="slide">
-                                <img src="https://drive.google.com/uc?id=1XRBeC77id0HcjJbk0SAxB8Bq1xdR1kjs" alt="">
+                                <img src="imgs/download (2).jpg" alt="">
                             </div>
                             <div class="slide">
-                                <img src="https://drive.google.com/uc?id=1plvJcUbKdF3kUjULfHtvdYUkFSX9gReJ" alt="">
+                                <img src="imgs/download (3).jpg" alt="">
                             </div>
                             <div class="slide">
-                                <img src="https://drive.google.com/uc?id=1sPzAVhP4y5BIz3KAC8nmSUCcfOKkr3ta" alt="">
+                                <img src="imgs/download (4).jpg" alt="">
                             </div>
                             <div class="slide">
-                                <img src="https://drive.google.com/uc?id=1_8Vqz-GPSOfrdpTCYPbw-ES2KeLBlp0a" alt="">
+                                <img src="imgs/download (5).jpg" alt="">
                             </div>
                             <div class="slide">
-                                <img src="https://drive.google.com/uc?id=1tAvb7ROEmp0z7hZKOvV0F8G3aZkafps0" alt="">
+                                <img src="imgs/download (6).jpg" alt="">
                             </div>
                             <div class="slide">
-                                <img src="https://drive.google.com/uc?id=1sZlfOhfqHTpB7YOBztIvetxe_k7JUK5T" alt="">
+                                <img src="imgs/download (7).jpg" alt="">
                             </div>
                             <div class="slide">
-                                <img src="https://drive.google.com/uc?id=1PQxY4eXIDofpM8-0hYWX_tK2-vf6_FSq" alt="">
+                                <img src="imgs/download (8).jpg" alt="">
                             </div>
                             <div class="slide">
-                                <img src="https://drive.google.com/uc?id=1tBgh2hMvJmeYbif5nEa4GJE5lwJlCOq3" alt="">
+                                <img src="imgs/download (9).jpg" alt="">
                             </div>
                         </div>
                         
@@ -215,7 +215,7 @@
                     </div>
                     <div class="bilhete">
                         <div class="circle" onclick="showMessage(23)">23</div>
-                        <div class="message" id="message23">Eu amo o jeito que você me faz acreditar que tudo é possível quando estamos juntos.</div>
+                        <div class="message" id="message23">Eu amo como você me faz acreditar que tudo é possível quando estamos juntos.</div>
                     </div>
                     <div class="bilhete">
                         <div class="circle" onclick="showMessage(24)">24</div>
@@ -254,35 +254,30 @@
 </html>
 
 <script>
-    // Definir a data final
-var dataFinal = new Date("07/06/2022 00:00:00").getTime();
-
+   
 // Criar uma função para atualizar o contador
-function atualizarContador() {
-  // Obter a data atual
-  var dataAtual = new Date().getTime();
+window.onload = function atualizarContador() {
+    // Obter a data atual
+    var dataInicio = new Date("06/07/2022 00:00:00");
+    var dataAtual = new Date();
 
-  // Calcular o tempo restante
-  var tempoRestante = dataAtual - dataFinal;
+    // Converter as datas para milissegundos
+    var diferencaEmMilisegundos = dataAtual.getTime() - dataInicio.getTime();
 
-  // Converter o tempo restante em dias, horas, minutos e segundos
-  var anos = Math.floor(tempoRestante / (1000 * 60 * 60 * 24 * 365));
-  var meses = Math.floor((tempoRestante / (1000 * 60 * 60 * 24 * 30)) % 12);
+    // Calcular a diferença em dias
+    var diferencaEmDias = diferencaEmMilisegundos / (1000 * 60 * 60 * 24);
 
-  // Exibir o tempo restante na página
-  document.querySelector(".anos").innerHTML = "anos: "+anos;
-  document.querySelector(".meses").innerHTML = "meses: "+meses;
- 
+    // Calcular anos
+    var anos = Math.floor(diferencaEmDias / 365);
 
-  // Parar o contador quando o tempo restante for zero ou negativo
-  if (tempoRestante <= 0) {
-    clearInterval(intervalo);
-    document.getElementById("contador").innerHTML = "O tempo acabou!";
-  }
+    // Calcular meses
+    const mesesRestantes = diferencaEmDias % 365;
+    const meses = Math.floor(mesesRestantes / 30.44);
+    
+    // Exibir o tempo restante na página
+    document.querySelector(".anos").innerHTML = "anos: "+anos;
+    document.querySelector(".meses").innerHTML = "meses: "+meses;
 }
-
-// Executar a função a cada segundo
-var intervalo = setInterval(atualizarContador, 1000);
 
 function showMessage(number) {
     var message = document.getElementById('message' + number);
@@ -293,7 +288,7 @@ function showMessage(number) {
         .to(message, { width: 0, display: 'none', delay: 0.2});
         
     } else {
-        Timeline.to(message, { width: 250, display: 'block' })
+        Timeline.to(message, { width: 200, display: 'block' })
         .to(message, {color: 'white', delay: 0.2});
     }
 }

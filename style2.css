@@ -1,3 +1,12 @@
+:root{
+  --button_color: #f3229c;
+}
+*{
+  font-family: cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
     display: flex;
     justify-content: center;
@@ -9,7 +18,7 @@ body {
   .circle {
     width: 50px;
     height: 50px;
-    background-color: #c834db;
+    background-color: var(--button_color);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -20,14 +29,15 @@ body {
 
   .message {
     display: none;
-    background-color: #c834db;
+    background-color: var(--button_color);
     color: white;
     padding: 10px;
     border-radius: 5px;
     width: 0; /* Inicialmente, a largura é zero */
     right: 50%; /* Posição inicial da borda esquerda */
-    height: 90px;
+    height: 70px;
     color: rgba(255, 255, 255, 0);
+    font-size: 0.8rem;
   }
   .bilhete{
       display: flex;
